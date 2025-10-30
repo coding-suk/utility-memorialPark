@@ -32,6 +32,17 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    //JWT
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly files('libs/jjwt-impl-0.11.5.jar') // 레포지토리 우회
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5' //JSON 직렬화
+
+    //SECURITY
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    //OAuth2-Client
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 }
 
 tasks.named('test') {
